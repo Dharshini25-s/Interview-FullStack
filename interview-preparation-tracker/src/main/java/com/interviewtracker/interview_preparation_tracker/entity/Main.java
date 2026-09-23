@@ -12,7 +12,7 @@ public class Main {
         L.add(u1);
         Problem p1=new Problem();
         p1.setProblemno(23);
-        p1.setProbelmName("Two sum");
+        p1.setProblemName("Two sum");
         p1.setAlgorithm("Two pointer");
         p1.setLevel("Easy");
         p1.setItInterview(true);

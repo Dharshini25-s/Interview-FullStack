@@ -1,4 +1,5 @@
 package com.interviewtracker.interview_preparation_tracker.entity;
+import java.time.LocalDate;
 
 import jakarta.persistence.*;
 
@@ -16,6 +17,9 @@ public class user {
     private String targetCompanies;
     private String experience;
     private String hoursPerDay;
+    private int currentStreak = 0;
+    private int longestStreak = 0;
+    private LocalDate lastActivityDate;
 
     public int getId() {
         return id;
@@ -87,6 +91,29 @@ public class user {
 
     public void setHoursPerDay(String hoursPerDay) {
         this.hoursPerDay = hoursPerDay;
+    }
+    public int getCurrentStreak() {
+        return currentStreak;
+    }
+
+    public void setCurrentStreak(int currentStreak) {
+        this.currentStreak = currentStreak;
+    }
+
+    public int getLongestStreak() {
+        return longestStreak;
+    }
+
+    public void setLongestStreak(int longestStreak) {
+        this.longestStreak = longestStreak;
+    }
+
+    public LocalDate getLastActivityDate() {
+        return lastActivityDate;
+    }
+
+    public void setLastActivityDate(LocalDate lastActivityDate) {
+        this.lastActivityDate = lastActivityDate;
     }
 }
 

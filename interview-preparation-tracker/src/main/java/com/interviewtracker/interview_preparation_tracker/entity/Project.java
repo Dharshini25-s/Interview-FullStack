@@ -1,5 +1,5 @@
 package com.interviewtracker.interview_preparation_tracker.entity;
-
+import java.time.LocalDate;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,7 +14,23 @@ public class Project {
     private String databaseName;
     private String status;
     private String githubLink;
-    private String notes;
+
+    @Column(length = 2000)
+    private String progress;
+
+    @Column(length = 2000)
+    private String whereLagged;
+
+    @Column(length = 2000)
+    private String howOvercome;
+
+    @Column(length = 2000)
+    private String nextSteps;
+
+    @com.fasterxml.jackson.annotation.JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate createdDate = LocalDate.now();
+    public LocalDate getCreatedDate() { return createdDate; }
+    public void setCreatedDate(LocalDate createdDate) { this.createdDate = createdDate; }
     public int getProjectId() {
         return projectId;
     }
@@ -37,7 +53,13 @@ public class Project {
     public void setStatus(String status) { this.status = status; }
     public String getGithubLink() { return githubLink; }
     public void setGithubLink(String githubLink) { this.githubLink = githubLink; }
-    public String getNotes() { return notes; }
-    public void setNotes(String notes) { this.notes = notes; }
-}
 
+    public String getProgress() { return progress; }
+    public void setProgress(String progress) { this.progress = progress; }
+    public String getWhereLagged() { return whereLagged; }
+    public void setWhereLagged(String whereLagged) { this.whereLagged = whereLagged; }
+    public String getHowOvercome() { return howOvercome; }
+    public void setHowOvercome(String howOvercome) { this.howOvercome = howOvercome; }
+    public String getNextSteps() { return nextSteps; }
+    public void setNextSteps(String nextSteps) { this.nextSteps = nextSteps; }
+}

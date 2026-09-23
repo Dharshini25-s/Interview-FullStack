@@ -17,5 +17,7 @@ public class ProblemService {
     {
         return problemRepository.findAll();
     }
-
+    public Problem viewproblembyid(int id) {
+        return problemRepository.findById(id).orElse(null);
+    }
 }
